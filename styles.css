@@ -1,0 +1,66 @@
+body {
+	margin: 0;
+	padding: 0;	
+	overflow: hidden;
+}
+.page {
+	min-height: 1000px;
+	overflow: hidden;
+	background: #4d94ff; 
+  background: -webkit-linear-gradient(left, #4d94ff , #e6e6ff); 
+  background: -o-linear-gradient(top right, #4d94ff, #e6e6ff); 
+  background: -moz-linear-gradient(bottom right, #4d94ff, #e6e6ff); 
+  background: linear-gradient(to bottom right, #4d94ff , #e6e6ff);
+}
+.flip-container {
+	margin: 0 auto;
+	margin-top: 10%;
+	perspective: 1000px;
+}
+.flip-container:hover .flip, .flip-container.hover .flipper {
+	transform: rotateY(180deg);
+}
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+.flip {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.front {
+	border: 6px solid orange;
+	background-color: white;
+	z-index: 2;
+	transform: rotateY(0deg);
+	box-shadow: 16px 16px 20px #777;
+	text-align: center;
+}
+.back {
+	border: 6px solid lightblue;
+	background-color: white;
+	transform: rotateY(180deg);
+	box-shadow: 16px 16px 20px #777;
+	text-align: center;
+}
+.front h2 {
+	text-align: center;
+	color: orange;
+	font-family: helvetica;
+	font-size: 3em;
+	margin-top: 15px;
+}
+.back h2 {
+	text-align: center;
+	color: lightblue;
+	font-family: helvetica;
+	font-size: 3em;
+	margin-top: 15px;
+}
